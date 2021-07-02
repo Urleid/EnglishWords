@@ -1,0 +1,79 @@
+﻿<Page x:Class="Urleid.EnglishWords.MainFrameWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Urleid.EnglishWords"
+      mc:Ignorable="d" 
+      d:DesignHeight="420" d:DesignWidth="760"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="MainFrameWindow">
+    <Grid Background="#6155cf">
+        <StackPanel Grid.Row="0">
+            <Border x:Name="borderWordsButton" 
+                    Background="#3c12b8" 
+                    Grid.Column="0" 
+                    CornerRadius="20" 
+                    Margin="30 10"
+                    Visibility="Visible"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch">
+                <Border x:Name="backgroundBorder" Background="White" Margin="10"  Padding="15" CornerRadius="15" Width="680" Height="260">
+                    <TextBlock x:Name="mainWord" 
+                           FontFamily="Gabriola" 
+                           FontSize="80" 
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap"/>
+                </Border>
+            </Border>
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <!--Кнопка "Я знаю это слово"-->
+                <Button
+                    x:Name="knowButton"
+                    Grid.Column="0"
+                    Margin="10 0"
+                    Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                    Height="75"
+                    Click="Click_Know_Button"
+                    
+                    Content="Я знаю это слово"
+                    FontSize="30"
+                    FontFamily="Gabriola"/>
+
+                <!--Кнопка "Далее"-->
+                <Button
+                    Grid.Column="1"
+                    Margin="10 0"
+                    Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                    Height="75"
+                    Click="Click_Next_Button"
+                    
+                    Content="Далее"
+                    FontSize="30"
+                    FontFamily="Gabriola"/>
+
+                <!--Кнопка "Я не знаю это слово"-->
+                <Button
+                    x:Name="dontKnowButton"
+                    Grid.Column="2"
+                    Margin="10 0"
+                    Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                    Height="75"
+                    Click="Click_DontKnow_Button"
+                    
+                    Content="Я не знаю это слово"
+                    FontSize="30"
+                    FontFamily="Gabriola"/>
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

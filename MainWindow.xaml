@@ -1,0 +1,66 @@
+﻿<Window x:Class="Urleid.EnglishWords.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Urleid.EnglishWords"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="EnglishWords" Height="600" Width="800" MinHeight="600" MaxHeight="600" MinWidth="800" MaxWidth="800" ShowInTaskbar="False" Icon="23_icon-icons.com_55003.png">
+    <Grid Background="#6155cf">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="450*"/>
+            <RowDefinition Height="150*"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="mainFrame" Grid.Row="0" ContentRendered="mainFrame_ContentRendered">
+
+        </Frame>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!--Кнопка "УЧИТЬ СЛОВА"-->
+            <Border x:Name="borderLearnButton" 
+                    Background="#3c12b8" 
+                    Grid.Column="0" 
+                    CornerRadius="20" 
+                    Margin="20 25" 
+                    Visibility="Visible"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"/>
+            <Button
+                Grid.Column="0"  
+                x:Name="learnButton"
+                Margin="25 10"
+                Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                Height="75"
+                Click="Click_Learn_Button"
+                
+                Content="УЧИТЬ СЛОВА"
+                FontSize="50"
+                FontFamily="Gabriola"
+                />
+            <Border x:Name="borderWordsButton" 
+                    Background="#3c12b8" 
+                    Grid.Column="1" 
+                    CornerRadius="20" 
+                    Margin="20 25"  
+                    Visibility="Hidden"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"/>
+            <!--Кнопка "СЛОВАРЬ"-->
+            <Button
+                Grid.Column="1"
+                x:Name="wordsButton"
+                Margin="25 10"
+                Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                Height="75"
+                Click="Click_Words_Button"
+                
+                Content="СЛОВАРЬ"
+                FontSize="50"
+                FontFamily="Gabriola"/>
+        </Grid>
+    </Grid>
+</Window>

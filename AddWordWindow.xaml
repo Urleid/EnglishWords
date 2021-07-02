@@ -1,0 +1,54 @@
+﻿<Window x:Class="Urleid.EnglishWords.AddWordWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Urleid.EnglishWords"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Closing="AddWordWindow_Close"
+        Title="AddWordWindow" Height="450" Width="800">
+    <Grid Background="#6155cf">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="330"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" 
+                Background="White" 
+                Margin="15" 
+                Padding="15" 
+                CornerRadius="15" 
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch">
+
+            <StackPanel>
+                <TextBox x:Name="textBoxValue"
+                         FontFamily="Gabriola"
+                         FontSize="30"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         materialDesign:HintAssist.Hint="Введите слово" 
+                         MouseEnter="MouseEnter_ClearValue"
+                         Padding="5"/>
+                <TextBox x:Name="textBoxTranslation"
+                         FontFamily="Gabriola"
+                         FontSize="30"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         materialDesign:HintAssist.Hint="Введите перевод" 
+                         MouseEnter="MouseEnter_ClearTranslation"
+                         Padding="5"/>
+            </StackPanel>
+        </Border>
+
+        <!--Кнопка "Принять"-->
+        <Button
+            Grid.Row="1"
+            Margin="10 0"
+            Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+            Height="75"
+            Click="Click_Accept_Button"
+            
+            Content="Принять"
+                FontSize="50"
+                FontFamily="Gabriola"/>
+    </Grid>
+</Window>
